@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Command Line Tips</title>
-    <description>Command Line Tips from Ben McCormick.  Short practical 
+    <description>Command Line Tips from Ben McCormick.  Short practical snippets from day to day practice.
 </description>
     <link>http://benmccormick.github.io/cli_blog/</link>
     <atom:link href="http://benmccormick.github.io/cli_blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 19 Aug 2015 00:13:47 -0400</pubDate>
-    <lastBuildDate>Wed, 19 Aug 2015 00:13:47 -0400</lastBuildDate>
+    <pubDate>Wed, 19 Aug 2015 00:16:11 -0400</pubDate>
+    <lastBuildDate>Wed, 19 Aug 2015 00:16:11 -0400</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
