@@ -6,13 +6,45 @@
 </description>
     <link>http://benmccormick.github.io/cli_blog/</link>
     <atom:link href="http://benmccormick.github.io/cli_blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 19 Aug 2015 00:16:11 -0400</pubDate>
-    <lastBuildDate>Wed, 19 Aug 2015 00:16:11 -0400</lastBuildDate>
+    <pubDate>Wed, 19 Aug 2015 00:20:20 -0400</pubDate>
+    <lastBuildDate>Wed, 19 Aug 2015 00:20:20 -0400</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
         <title>Hello World</title>
         <description>&lt;p&gt;Testing out octopress 3.0&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;python
+widgets = [1,2,3]
+for widget in widgets:
+    print(widget)
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;This is a blockquote
+even though I’m not saying much yet&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;em&gt;bold&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;italics&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;I may have reversed those&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;list&lt;/li&gt;
+  &lt;li&gt;list2&lt;/li&gt;
+  &lt;li&gt;list3&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;h1&quot;&gt;h1&lt;/h1&gt;
+&lt;p&gt;# h2
+# h3
+# h4
+# h5&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://google.com&quot;&gt;test link&lt;/a&gt;&lt;/p&gt;
+
 </description>
         <pubDate>Tue, 18 Aug 2015 22:52:44 -0400</pubDate>
         <link>http://benmccormick.github.io/cli_blog/2015/08/18/hello-world.html</link>
