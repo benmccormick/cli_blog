@@ -4,10 +4,10 @@
     <title>Command Line Tips</title>
     <description>Command Line Tips from Ben McCormick.  Short practical 
 </description>
-    <link>http://benmccormick.org/</link>
-    <atom:link href="http://benmccormick.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 18 Aug 2015 23:08:27 -0400</pubDate>
-    <lastBuildDate>Tue, 18 Aug 2015 23:08:27 -0400</lastBuildDate>
+    <link>http://benmccormick.github.io/cli_blog//</link>
+    <atom:link href="http://benmccormick.github.io/cli_blog//feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Wed, 19 Aug 2015 00:04:38 -0400</pubDate>
+    <lastBuildDate>Wed, 19 Aug 2015 00:04:38 -0400</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -15,8 +15,8 @@
         <description>&lt;p&gt;Testing out octopress 3.0&lt;/p&gt;
 </description>
         <pubDate>Tue, 18 Aug 2015 22:52:44 -0400</pubDate>
-        <link>http://benmccormick.org/2015/08/18/hello-world.html</link>
-        <guid isPermaLink="true">http://benmccormick.org/2015/08/18/hello-world.html</guid>
+        <link>http://benmccormick.github.io/cli_blog//2015/08/18/hello-world.html</link>
+        <guid isPermaLink="true">http://benmccormick.github.io/cli_blog//2015/08/18/hello-world.html</guid>
         
         
       </item>
@@ -39,8 +39,8 @@
 
 </description>
         <pubDate>Tue, 18 Aug 2015 18:36:57 -0400</pubDate>
-        <link>http://benmccormick.org/jekyll/update/2015/08/18/welcome-to-jekyll.html</link>
-        <guid isPermaLink="true">http://benmccormick.org/jekyll/update/2015/08/18/welcome-to-jekyll.html</guid>
+        <link>http://benmccormick.github.io/cli_blog//jekyll/update/2015/08/18/welcome-to-jekyll.html</link>
+        <guid isPermaLink="true">http://benmccormick.github.io/cli_blog//jekyll/update/2015/08/18/welcome-to-jekyll.html</guid>
         
         
         <category>jekyll</category>
