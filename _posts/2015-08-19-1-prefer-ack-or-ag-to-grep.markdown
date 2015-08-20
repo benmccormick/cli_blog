@@ -15,41 +15,49 @@ date: 2015-08-20T00:30:00-04:00
 
 This is easiest to see by comparing commands.
 
-```bash grep command for searching for 'javascript' in a file
+#### Searching for "javascript" in a file
+
+```bash grep command
 grep javascript foo.txt
 ```
 
-```bash ack command for searching for 'javascript' in a file
+```bash ack command
 ack javascript foo.txt
 ```
 
-```bash grep command for searching for 'javascript' in any file in the current directory
+#### Searching every file in the current directory for "javascript"
+
+```bash grep command
 grep -r javascript .
 ```
 
-```bash ack command for searching for 'javascript' in any file in the current directory
+```bash ack command
 ack javascript
 ```
 
-```bash grep command for searching for 'javascript' in any file in the current directory, ignoring anything in ./.git
+#### Searching every file in the current directory for "javascript", excluding a .git directory
+
+```bash grep command
 grep -r javascript . $(find . -type f | grep -v '\.git')
 ```
 
-```bash ack command for searching for 'javascript' in any file in the current directory, ignoring anything in ./.git
+```bash ack command
 ack javascript
 ```
 
-```bash grep command for searching for 'javascript' in any html file in the current directory, ignoring anything in ./.git
-grep -r javascript . $(find . -type f | grep -v '\.git')
+#### Searching every HTML file in the current directory for "javascript", excluding a .git directory
+
+```bash grep command
+grep -r javascript . $(find . -name '*.html' -or -name '*.htm'| grep -v '\.git')
 ```
 
-```bash ack command for searching for 'javascript' in any html file in the current directory, ignoring anything in ./.git
+```bash ack command
 ack --html javascript
 ```
 
 Basically, as the complexity of what you're trying to do increases in terms of multiple files, the overhead of using grep increases proportionately.  Because ack and ag are optimized for common use cases, they're able to scale much better.
 
-### Installation Instructions
+#### Installation Instructions
 
 - [ack](http://beyondgrep.com/install/)
 - [ag](https://github.com/ggreer/the_silver_searcher#installing)
