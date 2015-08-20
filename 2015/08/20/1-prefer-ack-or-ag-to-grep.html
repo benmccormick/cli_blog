@@ -75,25 +75,33 @@
 
 <p>This is easiest to see by comparing commands.</p>
 
-<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">grep command for searching for 'javascript' in a file</span></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line">grep javascript foo.txt</div></div></pre></div></figure>
+<h4 id="searching-for-javascript-in-a-file">Searching for “javascript” in a file</h4>
 
-<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">ack command for searching for 'javascript' in a file</span></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line">ack javascript foo.txt</div></div></pre></div></figure>
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">grep command</span></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line">grep javascript foo.txt</div></div></pre></div></figure>
 
-<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">grep command for searching for 'javascript' in any file in the current directory</span></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line">grep -r javascript .</div></div></pre></div></figure>
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">ack command</span></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line">ack javascript foo.txt</div></div></pre></div></figure>
 
-<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">ack command for searching for 'javascript' in any file in the current directory</span></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line">ack javascript</div></div></pre></div></figure>
+<h4 id="searching-every-file-in-the-current-directory-for-javascript">Searching every file in the current directory for “javascript”</h4>
 
-<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">grep command for searching for 'javascript' in any file in the current directory, ignoring anything in ./.git</span></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line">grep -r javascript . <span class="k">$(</span>find . -type f <span class="p">|</span> grep -v <span class="s1">&#39;\.git&#39;</span><span class="k">)</span></div></div></pre></div></figure>
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">grep command</span></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line">grep -r javascript .</div></div></pre></div></figure>
 
-<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">ack command for searching for 'javascript' in any file in the current directory, ignoring anything in ./.git</span></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line">ack javascript</div></div></pre></div></figure>
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">ack command</span></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line">ack javascript</div></div></pre></div></figure>
 
-<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">grep command for searching for 'javascript' in any html file in the current directory, ignoring anything in ./.git</span></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line">grep -r javascript . <span class="k">$(</span>find . -type f <span class="p">|</span> grep -v <span class="s1">&#39;\.git&#39;</span><span class="k">)</span></div></div></pre></div></figure>
+<h4 id="searching-every-file-in-the-current-directory-for-javascript-excluding-a-git-directory">Searching every file in the current directory for “javascript”, excluding a .git directory</h4>
 
-<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">ack command for searching for 'javascript' in any html file in the current directory, ignoring anything in ./.git</span></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line">ack --html javascript</div></div></pre></div></figure>
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">grep command</span></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line">grep -r javascript . <span class="k">$(</span>find . -type f <span class="p">|</span> grep -v <span class="s1">&#39;\.git&#39;</span><span class="k">)</span></div></div></pre></div></figure>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">ack command</span></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line">ack javascript</div></div></pre></div></figure>
+
+<h4 id="searching-every-html-file-in-the-current-directory-for-javascript-excluding-a-git-directory">Searching every HTML file in the current directory for “javascript”, excluding a .git directory</h4>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">grep command</span></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line">grep -r javascript . <span class="k">$(</span>find . -name <span class="s1">&#39;*.html&#39;</span> -or -name <span class="s1">&#39;*.htm&#39;</span><span class="p">|</span> grep -v <span class="s1">&#39;\.git&#39;</span><span class="k">)</span></div></div></pre></div></figure>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">ack command</span></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line">ack --html javascript</div></div></pre></div></figure>
 
 <p>Basically, as the complexity of what you’re trying to do increases in terms of multiple files, the overhead of using grep increases proportionately.  Because ack and ag are optimized for common use cases, they’re able to scale much better.</p>
 
-<h3 id="installation-instructions">Installation Instructions</h3>
+<h4 id="installation-instructions">Installation Instructions</h4>
 
 <ul>
   <li><a href="http://beyondgrep.com/install/">ack</a></li>
