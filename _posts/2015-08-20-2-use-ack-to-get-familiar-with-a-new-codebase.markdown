@@ -5,7 +5,7 @@ date: 2015-08-20T18:09:22-04:00
 categories: ack
 ---
 
-[ack](http://beyondgrep.com/) is an incredibly useful tool when approaching a new codebase, especially if you're focused on a specific feature. It allows you to quickly get a view of the codebase, and then zero in on the functionality you're interested in.  To see how this works, let's use jQuery's [source repo](https://github.com/jquery/jquery) as an example, and see what happens if we want to get a look at how it implements ajax.
+[ack](http://beyondgrep.com/) is an incredibly useful tool when approaching a new codebase, especially if you're focused on a specific feature [^1]. It allows you to quickly get a view of the codebase, and then zero in on the functionality you're interested in.  To see how this works, let's use jQuery's [source repo](https://github.com/jquery/jquery) as an example, and see what happens if we want to get a look at how it implements ajax.
 
 ```bash get jQuery
 ❯ git clone git@github.com:jquery/jquery.git
@@ -99,3 +99,6 @@ Now we can use ack's `-x` argument to search the files piped in through standard
 So we can see pretty quickly that these files are safe to ignore in terms of understanding how ajax works in jQuery.  They're just module loads, an actual call to the ajax method for other purposes, and settings serialization. It is useful to note that `src/ajax` is loaded into the main jQuery file first. Its probably worth looking at it as the starting point for our investigation. We're well on our way to diving into the ajax functionality, able to focus on 11 of the 249 files in the repo immediately, already knowing how those files are loaded into the main library.
 
 This was just a simple example.  Whenever you're spelunking into new code territory, consider using ack to get your bearings.  Things go a lot faster when you know the lay of the land in advance.
+
+
+[^1]: This post is written referencing ack, but all of the above equally applies to [ag](https://github.com/ggreer/the_silver_searcher)
