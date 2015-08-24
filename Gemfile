@@ -5,4 +5,5 @@ gem "octopress"
 group :jekyll_plugins do
   gem "octopress-codefence"
   gem "octopress-solarized"
+  gem "octopress-littlefoot"
 end

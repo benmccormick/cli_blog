@@ -2,6 +2,7 @@
 layout: post
 title: "#2: Use Ack to Get Familiar With a New Codebase"
 date: 2015-08-20T18:09:22-04:00
+categories: ack
 ---
 
 [ack](http://beyondgrep.com/) is an incredibly useful tool when approaching a new codebase, especially if you're focused on a specific feature. It allows you to quickly get a view of the codebase, and then zero in on the functionality you're interested in.  To see how this works, let's use jQuery's [source repo](https://github.com/jquery/jquery) as an example, and see what happens if we want to get a look at how it implements ajax.

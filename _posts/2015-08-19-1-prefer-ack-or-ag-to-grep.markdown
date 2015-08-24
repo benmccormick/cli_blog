@@ -2,6 +2,7 @@
 layout: post
 title: "#1: Prefer ack or ag to grep"
 date: 2015-08-20T00:30:00-04:00
+categories: ack
 ---
 
 [grep](http://linux.die.net/man/1/grep) is one of the most well known unix utilties.  If you've had any exposure to the command line at all, you've probably searched for something using grep.  grep's standalone use is searching for content inside of files, but with Unix's piping philosophy it is useful as a general search and filtering tool.  Originally created for Version 4 Unix 42 years ago, it has been a staple of *Nix operating systems ever since.   If you've been using it for even half that time, I'm sure a blog post isn't enough to convince you to stop.  But for the rest of us, there's an opportunity to do better.
