@@ -6,8 +6,8 @@
 </description>
     <link>http://benmccormick.github.io/cli_blog/</link>
     <atom:link href="http://benmccormick.github.io/cli_blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 20 Aug 2015 19:28:02 -0400</pubDate>
-    <lastBuildDate>Thu, 20 Aug 2015 19:28:02 -0400</lastBuildDate>
+    <pubDate>Sun, 23 Aug 2015 21:52:09 -0400</pubDate>
+    <lastBuildDate>Sun, 23 Aug 2015 21:52:09 -0400</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -89,9 +89,11 @@
 &lt;p&gt;This was just a simple example.  Whenever you’re spelunking into new code territory, consider using ack to get your bearings.  Things go a lot faster when you know the lay of the land in advance.&lt;/p&gt;
 </description>
         <pubDate>Thu, 20 Aug 2015 18:09:22 -0400</pubDate>
-        <link>http://benmccormick.github.io/cli_blog/2015/08/20/2-use-ack-to-get-familiar-with-a-new-codebase.html</link>
-        <guid isPermaLink="true">http://benmccormick.github.io/cli_blog/2015/08/20/2-use-ack-to-get-familiar-with-a-new-codebase.html</guid>
+        <link>http://benmccormick.github.io/cli_blog/ack/2015/08/20/2-use-ack-to-get-familiar-with-a-new-codebase.html</link>
+        <guid isPermaLink="true">http://benmccormick.github.io/cli_blog/ack/2015/08/20/2-use-ack-to-get-familiar-with-a-new-codebase.html</guid>
         
+        
+        <category>ack</category>
         
       </item>
     
@@ -152,9 +154,11 @@
 &lt;/div&gt;
 </description>
         <pubDate>Thu, 20 Aug 2015 00:30:00 -0400</pubDate>
-        <link>http://benmccormick.github.io/cli_blog/2015/08/20/1-prefer-ack-or-ag-to-grep.html</link>
-        <guid isPermaLink="true">http://benmccormick.github.io/cli_blog/2015/08/20/1-prefer-ack-or-ag-to-grep.html</guid>
+        <link>http://benmccormick.github.io/cli_blog/ack/2015/08/20/1-prefer-ack-or-ag-to-grep.html</link>
+        <guid isPermaLink="true">http://benmccormick.github.io/cli_blog/ack/2015/08/20/1-prefer-ack-or-ag-to-grep.html</guid>
         
+        
+        <category>ack</category>
         
       </item>
     
