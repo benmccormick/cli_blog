@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>#2: Use Ack to Get Familiar With a New Codebase</title>
-  <meta name="description" content="ack is an incredibly useful tool when approaching a new codebase, especially if you’re focused on a specific feature. It allows you to quickly get a view of ...">
+  <meta name="description" content="ack is an incredibly useful tool when approaching a new codebase, especially if you’re focused on a specific feature 1. It allows you to quickly get a view o...">
 
   <link rel="stylesheet" href="/cli_blog/css/main.css">
   <link rel="canonical" href="http://benmccormick.github.io/cli_blog/ack/2015/08/20/2-use-ack-to-get-familiar-with-a-new-codebase.html">
@@ -67,7 +67,7 @@
   </header>
 
   <article class="post-content">
-    <p><a href="http://beyondgrep.com/">ack</a> is an incredibly useful tool when approaching a new codebase, especially if you’re focused on a specific feature. It allows you to quickly get a view of the codebase, and then zero in on the functionality you’re interested in.  To see how this works, let’s use jQuery’s <a href="https://github.com/jquery/jquery">source repo</a> as an example, and see what happens if we want to get a look at how it implements ajax.</p>
+    <p><a href="http://beyondgrep.com/">ack</a> is an incredibly useful tool when approaching a new codebase, especially if you’re focused on a specific feature <sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>. It allows you to quickly get a view of the codebase, and then zero in on the functionality you’re interested in.  To see how this works, let’s use jQuery’s <a href="https://github.com/jquery/jquery">source repo</a> as an example, and see what happens if we want to get a look at how it implements ajax.</p>
 
 <figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">get jQuery</span></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line">❯ git clone git@github.com:jquery/jquery.git
 </div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line">❯ <span class="nb">cd </span>jquery</div></div></pre></div></figure>
@@ -142,6 +142,14 @@
 <p>So we can see pretty quickly that these files are safe to ignore in terms of understanding how ajax works in jQuery.  They’re just module loads, an actual call to the ajax method for other purposes, and settings serialization. It is useful to note that <code>src/ajax</code> is loaded into the main jQuery file first. Its probably worth looking at it as the starting point for our investigation. We’re well on our way to diving into the ajax functionality, able to focus on 11 of the 249 files in the repo immediately, already knowing how those files are loaded into the main library.</p>
 
 <p>This was just a simple example.  Whenever you’re spelunking into new code territory, consider using ack to get your bearings.  Things go a lot faster when you know the lay of the land in advance.</p>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>This post is written referencing ack, but all of the above equally applies to <a href="https://github.com/ggreer/the_silver_searcher">ag</a> <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
 
   </article>
 

@@ -6,13 +6,57 @@
 </description>
     <link>http://benmccormick.github.io/cli_blog/</link>
     <atom:link href="http://benmccormick.github.io/cli_blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 23 Aug 2015 21:52:09 -0400</pubDate>
-    <lastBuildDate>Sun, 23 Aug 2015 21:52:09 -0400</lastBuildDate>
+    <pubDate>Sun, 23 Aug 2015 23:02:54 -0400</pubDate>
+    <lastBuildDate>Sun, 23 Aug 2015 23:02:54 -0400</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
+        <title>#3: Take Advantage of Acks Configurability</title>
+        <description>&lt;p&gt;&lt;em&gt;This is the 3rd post in a row on ack.  If you haven’t yet, checkout tips &lt;a href=&quot;http://benmccormick.github.io/cli_blog/ack/2015/08/20/1-prefer-ack-or-ag-to-grep.html&quot;&gt;#1&lt;/a&gt; and &lt;a href=&quot;http://benmccormick.github.io/cli_blog/ack/2015/08/20/2-use-ack-to-get-familiar-with-a-new-codebase.html&quot;&gt;#2&lt;/a&gt; for more background on ack.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;One of the nice things about &lt;a href=&quot;http://beyondgrep.com/&quot;&gt;ack&lt;/a&gt; is the fact that it takes an &lt;code&gt;.ackrc&lt;/code&gt; configuration file &lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;. These files can be scoped at a directory level, a user level or at a root level, and mirror the options available on the executable itself.  This allows you to extend and customize acks behavior in 3 primary ways.&lt;/p&gt;
+
+&lt;h4 id=&quot;add-new-filetypes-and-bundle-existing-ones&quot;&gt;1. Add new filetypes, and bundle existing ones&lt;/h4&gt;
+
+&lt;p&gt;One of ack’s most useful features is the ability to add a &lt;code&gt;--&amp;lt;filetype&amp;gt;&lt;/code&gt; flag to your searches to restrict your searches to a specific filetype.   ack comes with 75 builtin types including almost all common languages.  But those aren’t always good enough.  To handle obscure languages, and not so obscure syntaxes like handlebars templates, ack lets you define new filetypes.  You’re also able to modify existing filetypes to add additional file extensions to include under that filetype.  So for instance my ackrc includes these lines:&lt;/p&gt;
+
+&lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;--type-add
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;2&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;hbs=hbs
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;3&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;--type-add
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;4&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;js=js,es6&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
+
+&lt;p&gt;The first 2 lines allow me to specifically search handlebars files, which are where all of the html content for my work projects is stored.  The next 2 lines include es6 files in my JavaScript searches, useful since I append JavaScript files that I intend to process with &lt;a href=&quot;https://babeljs.io/&quot;&gt;Babel&lt;/a&gt; with the &lt;code&gt;.es6&lt;/code&gt; extenstion.  Customizing the js extension allows me to search all of my JavaScript together.  You can also define richer types in ackrc &lt;a href=&quot;http://beyondgrep.com/documentation/ack-2.14-man.html#defining_your_own_types&quot;&gt;based on file names using regular expressions or direct name matching&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h4 id=&quot;set-default-options&quot;&gt;2. Set default options&lt;/h4&gt;
+
+&lt;p&gt;Any option that the ack executable takes can have a default set or changed in an ackrc file.  This is mainly useful for the display option.  By default ack groups matches from different files and gives the file information above each group of matches.  It also shows all output in color.  Any of those things can be disabled or changed in your ackrc file.&lt;/p&gt;
+
+&lt;h4 id=&quot;exclude-unwanted-directories-or-files&quot;&gt;3. Exclude unwanted directories or files&lt;/h4&gt;
+
+&lt;p&gt;Oftentimes there are a predictable group of files that you may want to ignore in searches.  Perhaps you have a build directory that mirrors your source code, or documentation files mingled with your source.  You can put &lt;code&gt;--ignore-directory&lt;/code&gt; or &lt;code&gt;--ignore-file&lt;/code&gt;.  Ignore directory takes a directory name, while ignore-file takes matches in the same format as the custom filetypes mentioned above.&lt;/p&gt;
+
+&lt;p&gt;If you’re starting to use ack, don’t miss the chance to make your searches even more efficient by removing any rough edges with an &lt;code&gt;.ackrc&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot;&gt;
+      &lt;p&gt;This is also one of the main traits that separates ack from &lt;a href=&quot;https://github.com/ggreer/the_silver_searcher&quot;&gt;ag&lt;/a&gt;. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Sun, 23 Aug 2015 22:01:41 -0400</pubDate>
+        <link>http://benmccormick.github.io/cli_blog/ack/2015/08/23/3-take-advantage-of-acks-configurability.html</link>
+        <guid isPermaLink="true">http://benmccormick.github.io/cli_blog/ack/2015/08/23/3-take-advantage-of-acks-configurability.html</guid>
+        
+        
+        <category>ack</category>
+        
+      </item>
+    
+      <item>
         <title>#2: Use Ack to Get Familiar With a New Codebase</title>
-        <description>&lt;p&gt;&lt;a href=&quot;http://beyondgrep.com/&quot;&gt;ack&lt;/a&gt; is an incredibly useful tool when approaching a new codebase, especially if you’re focused on a specific feature. It allows you to quickly get a view of the codebase, and then zero in on the functionality you’re interested in.  To see how this works, let’s use jQuery’s &lt;a href=&quot;https://github.com/jquery/jquery&quot;&gt;source repo&lt;/a&gt; as an example, and see what happens if we want to get a look at how it implements ajax.&lt;/p&gt;
+        <description>&lt;p&gt;&lt;a href=&quot;http://beyondgrep.com/&quot;&gt;ack&lt;/a&gt; is an incredibly useful tool when approaching a new codebase, especially if you’re focused on a specific feature &lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;. It allows you to quickly get a view of the codebase, and then zero in on the functionality you’re interested in.  To see how this works, let’s use jQuery’s &lt;a href=&quot;https://github.com/jquery/jquery&quot;&gt;source repo&lt;/a&gt; as an example, and see what happens if we want to get a look at how it implements ajax.&lt;/p&gt;
 
 &lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;figcaption class=&quot;code-highlight-caption&quot;&gt;&lt;span class=&quot;code-highlight-caption-title&quot;&gt;get jQuery&lt;/span&gt;&lt;/figcaption&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;❯ git clone git@github.com:jquery/jquery.git
 &lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;2&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;❯ &lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;jquery&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
@@ -87,6 +131,14 @@
 &lt;p&gt;So we can see pretty quickly that these files are safe to ignore in terms of understanding how ajax works in jQuery.  They’re just module loads, an actual call to the ajax method for other purposes, and settings serialization. It is useful to note that &lt;code&gt;src/ajax&lt;/code&gt; is loaded into the main jQuery file first. Its probably worth looking at it as the starting point for our investigation. We’re well on our way to diving into the ajax functionality, able to focus on 11 of the 249 files in the repo immediately, already knowing how those files are loaded into the main library.&lt;/p&gt;
 
 &lt;p&gt;This was just a simple example.  Whenever you’re spelunking into new code territory, consider using ack to get your bearings.  Things go a lot faster when you know the lay of the land in advance.&lt;/p&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot;&gt;
+      &lt;p&gt;This post is written referencing ack, but all of the above equally applies to &lt;a href=&quot;https://github.com/ggreer/the_silver_searcher&quot;&gt;ag&lt;/a&gt; &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
 </description>
         <pubDate>Thu, 20 Aug 2015 18:09:22 -0400</pubDate>
         <link>http://benmccormick.github.io/cli_blog/ack/2015/08/20/2-use-ack-to-get-familiar-with-a-new-codebase.html</link>

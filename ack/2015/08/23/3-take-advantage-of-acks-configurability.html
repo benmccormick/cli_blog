@@ -6,12 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Command Line Tips</title>
-  <meta name="description" content="Command Line Tips from Ben McCormick.  Short practical snippets from day to day practice.
-">
+  <title>#3: Take Advantage of Acks Configurability</title>
+  <meta name="description" content="This is the 3rd post in a row on ack.  If you haven’t yet, checkout tips #1 and #2 for more background on ack.">
 
   <link rel="stylesheet" href="/cli_blog/css/main.css">
-  <link rel="canonical" href="http://benmccormick.github.io/cli_blog/">
+  <link rel="canonical" href="http://benmccormick.github.io/cli_blog/ack/2015/08/23/3-take-advantage-of-acks-configurability.html">
   <link rel="alternate" type="application/rss+xml" title="Command Line Tips" href="http://benmccormick.github.io/cli_blog/feed.xml" />
   <link href='/cli_blog/stylesheets/all-79891ed7867fb7a88dc5aa7b27f3b38b.css' media='all' rel='stylesheet' type='text/css'>
 
@@ -60,39 +59,48 @@
 
     <div class="page-content">
       <div class="wrapper">
-        <div class="home">
+        <div class="post">
 
-  <h1 class="page-heading">Posts</h1>
+  <header class="post-header">
+    <h1 class="post-title">#3: Take Advantage of Acks Configurability</h1>
+    <p class="post-meta">Aug 23, 2015</p>
+  </header>
 
-  <ul class="post-list">
-    
-      <li>
-        <span class="post-meta">Aug 23, 2015</span>
+  <article class="post-content">
+    <p><em>This is the 3rd post in a row on ack.  If you haven’t yet, checkout tips <a href="http://benmccormick.github.io/cli_blog/ack/2015/08/20/1-prefer-ack-or-ag-to-grep.html">#1</a> and <a href="http://benmccormick.github.io/cli_blog/ack/2015/08/20/2-use-ack-to-get-familiar-with-a-new-codebase.html">#2</a> for more background on ack.</em></p>
 
-        <h2>
-          <a class="post-link" href="/cli_blog/ack/2015/08/23/3-take-advantage-of-acks-configurability.html">#3: Take Advantage of Acks Configurability</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Aug 20, 2015</span>
+<p>One of the nice things about <a href="http://beyondgrep.com/">ack</a> is the fact that it takes an <code>.ackrc</code> configuration file <sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>. These files can be scoped at a directory level, a user level or at a root level, and mirror the options available on the executable itself.  This allows you to extend and customize acks behavior in 3 primary ways.</p>
 
-        <h2>
-          <a class="post-link" href="/cli_blog/ack/2015/08/20/2-use-ack-to-get-familiar-with-a-new-codebase.html">#2: Use Ack to Get Familiar With a New Codebase</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Aug 20, 2015</span>
+<h4 id="add-new-filetypes-and-bundle-existing-ones">1. Add new filetypes, and bundle existing ones</h4>
 
-        <h2>
-          <a class="post-link" href="/cli_blog/ack/2015/08/20/1-prefer-ack-or-ag-to-grep.html">#1: Prefer ack or ag to grep</a>
-        </h2>
-      </li>
-    
-  </ul>
+<p>One of ack’s most useful features is the ability to add a <code>--&lt;filetype&gt;</code> flag to your searches to restrict your searches to a specific filetype.   ack comes with 75 builtin types including almost all common languages.  But those aren’t always good enough.  To handle obscure languages, and not so obscure syntaxes like handlebars templates, ack lets you define new filetypes.  You’re also able to modify existing filetypes to add additional file extensions to include under that filetype.  So for instance my ackrc includes these lines:</p>
 
-  <p class="rss-subscribe">subscribe via<a href="/cli_blog/feed.xml"> RSS</a> or <a href="/cli_blog/subscribe/">Email</a></p>
+<figure class="code-highlight-figure"><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line">--type-add
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line">hbs=hbs
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line">--type-add
+</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line">js=js,es6</div></div></pre></div></figure>
+
+<p>The first 2 lines allow me to specifically search handlebars files, which are where all of the html content for my work projects is stored.  The next 2 lines include es6 files in my JavaScript searches, useful since I append JavaScript files that I intend to process with <a href="https://babeljs.io/">Babel</a> with the <code>.es6</code> extenstion.  Customizing the js extension allows me to search all of my JavaScript together.  You can also define richer types in ackrc <a href="http://beyondgrep.com/documentation/ack-2.14-man.html#defining_your_own_types">based on file names using regular expressions or direct name matching</a>.</p>
+
+<h4 id="set-default-options">2. Set default options</h4>
+
+<p>Any option that the ack executable takes can have a default set or changed in an ackrc file.  This is mainly useful for the display option.  By default ack groups matches from different files and gives the file information above each group of matches.  It also shows all output in color.  Any of those things can be disabled or changed in your ackrc file.</p>
+
+<h4 id="exclude-unwanted-directories-or-files">3. Exclude unwanted directories or files</h4>
+
+<p>Oftentimes there are a predictable group of files that you may want to ignore in searches.  Perhaps you have a build directory that mirrors your source code, or documentation files mingled with your source.  You can put <code>--ignore-directory</code> or <code>--ignore-file</code>.  Ignore directory takes a directory name, while ignore-file takes matches in the same format as the custom filetypes mentioned above.</p>
+
+<p>If you’re starting to use ack, don’t miss the chance to make your searches even more efficient by removing any rough edges with an <code>.ackrc</code>.</p>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>This is also one of the main traits that separates ack from <a href="https://github.com/ggreer/the_silver_searcher">ag</a>. <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+  </article>
 
 </div>
 
